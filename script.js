@@ -112,6 +112,10 @@ complaints.filter(c => c.status === "Resolved").length;
        
 
         const card = document.createElement("div");
+        card.setAttribute("data-name", complaint.name.toLowerCase());
+card.setAttribute("data-id", complaint.id.toLowerCase());
+card.setAttribute("data-category", complaint.category.toLowerCase());
+card.setAttribute("data-status", complaint.status);
         card.className = "admin-card";
 
         card.innerHTML = `
@@ -272,5 +276,37 @@ function login(){
         alert("Invalid Username or Password");
 
     }
+
+}
+
+function filterComplaints(){
+
+    const search = document.getElementById("searchInput").value.toLowerCase();
+    const status = document.getElementById("statusFilter").value;
+
+    const cards = document.querySelectorAll(".admin-card");
+
+    cards.forEach(card=>{
+
+        const name = card.dataset.name;
+        const id = card.dataset.id;
+        const category = card.dataset.category;
+        const complaintStatus = card.dataset.status;
+
+        const matchesSearch =
+            name.includes(search) ||
+            id.includes(search) ||
+            category.includes(search);
+
+        const matchesStatus =
+            status === "All" || complaintStatus === status;
+
+        if(matchesSearch && matchesStatus){
+            card.style.display="block";
+        }else{
+            card.style.display="none";
+        }
+
+    });
 
 }
