@@ -129,3 +129,38 @@ td img{
     }
 
 }
+
+.admin-card{
+    background:white;
+    max-width:800px;
+    margin:20px auto;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.admin-card img{
+    width:180px;
+    border-radius:10px;
+    margin:10px 0;
+}
+
+.admin-card select,
+.admin-card textarea,
+.admin-card input[type=file]{
+    margin-top:10px;
+    margin-bottom:15px;
+}
+
+.updateBtn{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.updateBtn:hover{
+    background:#1b5e20;
+}
