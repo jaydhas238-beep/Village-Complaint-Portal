@@ -211,63 +211,90 @@ function updateComplaint(index) {
 
 function trackComplaint(){
 
-    const id=document.getElementById("trackId").value.trim().toUpperCase();
+    const id = document.getElementById("trackId").value.trim().toUpperCase();
 
-    const complaints=JSON.parse(localStorage.getItem("complaints")) || [];
+    const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
 
-    const complaint=complaints.find(c=>c.id===id);
+    const complaint = complaints.find(c => c.id === id);
 
-    const result=document.getElementById("trackResult");
+    const result = document.getElementById("trackResult");
 
     if(!complaint){
 
-        result.innerHTML="<h2>Complaint Not Found</h2>";
+        result.innerHTML = `
+            <div class="result-card">
+                <h2 style="color:red;">Complaint Not Found</h2>
+            </div>
+        `;
 
         return;
-
     }
 
-    result.innerHTML=`
+    result.innerHTML = `
 
     <div class="result-card">
 
         <h2>${complaint.id}</h2>
 
-        <p><strong>Name:</strong> ${complaint.name}</p>
+        <div class="result-grid">
 
-        <p><strong>Category:</strong> ${complaint.category}</p>
+            <div class="info-card">
 
-       <p><strong>Status:</strong></p>
+                <p><strong>Name</strong></p>
+                <p>${complaint.name}</p>
 
-<span class="status ${
-    complaint.status==="Resolved"
-    ? "resolved"
-    : complaint.status==="In Progress"
-    ? "progress"
-    : "pending"
-}">
-    ${complaint.status}
-</span>
+                <br>
 
-        <p><strong>Remark:</strong> ${complaint.remark || "No remarks yet."}</p>
+                <p><strong>Category</strong></p>
+                <p>${complaint.category}</p>
 
-        <h3>Before Photo</h3>
+                <br>
 
-        <img src="${complaint.photo}">
+                <p><strong>Status</strong></p>
 
-        ${
-            complaint.afterPhoto
-            ?
-            `<h3>After Completion Photo</h3>
-             <img src="${complaint.afterPhoto}">`
-            :
-            ""
-        }
+                <span class="status-badge ${
+                    complaint.status==="Resolved"
+                    ? "resolved"
+                    : complaint.status==="In Progress"
+                    ? "progress"
+                    : "pending"
+                }">
+                    ${complaint.status}
+                </span>
+
+                <br><br>
+
+                <p><strong>Remark</strong></p>
+
+                <p>${complaint.remark || "No remarks yet."}</p>
+
+            </div>
+
+            <div>
+
+                <h3>Before Photo</h3>
+
+                <img src="${complaint.photo}">
+
+                ${
+                    complaint.afterPhoto
+                    ?
+                    `
+                    <h3>Completed Work</h3>
+
+                    <img src="${complaint.afterPhoto}">
+                    `
+                    :
+                    ""
+                }
+
+            </div>
+
+        </div>
 
     </div>
 
     `;
-
 }
 
 function login(){
