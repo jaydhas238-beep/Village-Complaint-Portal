@@ -164,3 +164,36 @@ td img{
 .updateBtn:hover{
     background:#1b5e20;
 }
+
+
+.track-box{
+    max-width:500px;
+    margin:30px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.track-box input{
+    width:100%;
+    margin-bottom:15px;
+}
+
+#trackResult{
+    max-width:700px;
+    margin:30px auto;
+}
+
+.result-card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.result-card img{
+    width:200px;
+    border-radius:10px;
+    margin:10px 0;
+}
