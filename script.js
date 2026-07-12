@@ -133,3 +133,45 @@ if (adminContainer) {
     });
 
 }
+
+function updateComplaint(index) {
+
+    let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+    const status = document.getElementById(`status-${index}`).value;
+    const remark = document.getElementById(`remark-${index}`).value;
+    const afterPhoto = document.getElementById(`afterPhoto-${index}`).files[0];
+
+    complaints[index].status = status;
+    complaints[index].remark = remark;
+
+    if(afterPhoto){
+
+        const reader = new FileReader();
+
+        reader.onload = function(){
+
+            complaints[index].afterPhoto = reader.result;
+
+            localStorage.setItem("complaints", JSON.stringify(complaints));
+
+            alert("Complaint Updated Successfully!");
+
+            location.reload();
+
+        }
+
+        reader.readAsDataURL(afterPhoto);
+
+    }
+    else{
+
+        localStorage.setItem("complaints", JSON.stringify(complaints));
+
+        alert("Complaint Updated Successfully!");
+
+        location.reload();
+
+    }
+
+}
