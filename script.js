@@ -237,7 +237,17 @@ function trackComplaint(){
 
         <p><strong>Category:</strong> ${complaint.category}</p>
 
-        <p><strong>Status:</strong> ${complaint.status}</p>
+       <p><strong>Status:</strong></p>
+
+<span class="status ${
+    complaint.status==="Resolved"
+    ? "resolved"
+    : complaint.status==="In Progress"
+    ? "progress"
+    : "pending"
+}">
+    ${complaint.status}
+</span>
 
         <p><strong>Remark:</strong> ${complaint.remark || "No remarks yet."}</p>
 
