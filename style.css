@@ -373,3 +373,24 @@ grid-template-columns:1fr;
     border-radius:10px;
     font-size:16px;
 }
+
+    .status{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:20px;
+    font-weight:bold;
+    color:white;
+    margin:10px 0;
+}
+
+.pending{
+    background:#e53935;
+}
+
+.progress{
+    background:#fb8c00;
+}
+
+.resolved{
+    background:#43a047;
+}
