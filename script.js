@@ -1,3 +1,10 @@
+if(
+    window.location.pathname.includes("admin.html") &&
+    localStorage.getItem("adminLoggedIn") !== "true"
+){
+    window.location.href = "login.html";
+}
+
 const form = document.getElementById("complaintForm");
 
 if (form) {
