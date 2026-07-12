@@ -260,3 +260,48 @@ nav{
         grid-template-columns:1fr;
     }
 }
+
+
+.footer{
+
+    background:#1b5e20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:60px 20px;
+
+}
+
+.footer h2{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.footer p{
+
+    margin:10px 0;
+
+    color:#ddd;
+
+    line-height:1.8;
+
+}
+
+.footer hr{
+
+    width:120px;
+
+    margin:25px auto;
+
+    border:none;
+
+    height:2px;
+
+    background:#4CAF50;
+
+}
