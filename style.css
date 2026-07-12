@@ -529,11 +529,13 @@ body{
 
     color:white;
 
+    text-align:center;
+
 }
 
 .hero-content h1{
 
-    font-size:55px;
+    font-size:60px;
 
     margin-bottom:20px;
 
@@ -541,11 +543,11 @@ body{
 
 .hero-content p{
 
-    font-size:20px;
+    font-size:22px;
 
-    line-height:1.8;
+    margin-bottom:40px;
 
-    margin-bottom:35px;
+    line-height:1.6;
 
 }
 
@@ -589,6 +591,68 @@ body{
 
 }
 
+    .navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:#2E7D32;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.logo span{
+
+    color:white;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#FFD54F;
+
+}
+
 @media(max-width:768px){
 
 .navbar{
@@ -598,7 +662,6 @@ body{
     gap:20px;
 
 }
-
 nav{
 
     flex-wrap:wrap;
