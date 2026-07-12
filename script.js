@@ -57,17 +57,25 @@ const tableBody = document.querySelector("#complaintsTable tbody");
 if (tableBody) {
 
     const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
-    document.getElementById("totalComplaints").textContent = complaints.length;
+    const total = document.getElementById("totalComplaints");
+const pending = document.getElementById("pendingComplaints");
+const progress = document.getElementById("progressComplaints");
+const resolved = document.getElementById("resolvedComplaints");
 
-document.getElementById("pendingComplaints").textContent =
-complaints.filter(c => c.status === "Pending").length;
+if(total){
 
-document.getElementById("progressComplaints").textContent =
-complaints.filter(c => c.status === "In Progress").length;
+    total.textContent = complaints.length;
 
-document.getElementById("resolvedComplaints").textContent =
-complaints.filter(c => c.status === "Resolved").length;
+    pending.textContent =
+    complaints.filter(c=>c.status==="Pending").length;
 
+    progress.textContent =
+    complaints.filter(c=>c.status==="In Progress").length;
+
+    resolved.textContent =
+    complaints.filter(c=>c.status==="Resolved").length;
+
+}
     complaints.forEach((complaint) => {
 
         const row = document.createElement("tr");
