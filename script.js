@@ -97,8 +97,19 @@ const adminContainer = document.getElementById("adminContainer");
 if (adminContainer) {
 
     const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+    document.getElementById("totalComplaints").textContent = complaints.length;
+
+document.getElementById("pendingComplaints").textContent =
+complaints.filter(c => c.status === "Pending").length;
+
+document.getElementById("progressComplaints").textContent =
+complaints.filter(c => c.status === "In Progress").length;
+
+document.getElementById("resolvedComplaints").textContent =
+complaints.filter(c => c.status === "Resolved").length;
 
     complaints.forEach((complaint, index) => {
+       
 
         const card = document.createElement("div");
         card.className = "admin-card";
