@@ -5,63 +5,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-  <header>
-    <h1>GramSahay</h1>
-    <p>Village Complaint Portal</p>
+<header class="navbar">
+
+    <div class="logo">
+        🏡 <span>GramSahay</span>
+    </div>
+
+    <nav>
+
+        <a href="index.html">Home</a>
+
+        <a href="complaint.html">Register Complaint</a>
+
+        <a href="track.html">Track Complaint</a>
+
+        <a href="login.html">Admin Login</a>
+
+    </nav>
+
 </header>
 
-<main>
-    <section class="complaint-form">
-        <h2>Register a Complaint</h2>
+<section class="hero">
 
-        <form id="complaintForm">
+    <div class="hero-content">
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
+        <h1>Smart Village Complaint Management System</h1>
 
-            <label for="mobile">Mobile Number</label>
-            <input type="tel" id="mobile" placeholder="Enter mobile number" required>
+        <p>
+            Report village problems digitally and help build
+            a cleaner, safer and smarter village.
+        </p>
 
-            <label for="category">Complaint Category</label>
-            <select id="category" required>
-                <option value="">Select Category</option>
-                <option>Road Damage</option>
-                <option>Water Supply</option>
-                <option>Street Lights</option>
-                <option>Garbage</option>
-                <option>Drainage</option>
-                <option>Electricity</option>
-                <option>Other</option>
-            </select>
+        <div class="hero-buttons">
 
-            <label for="description">Complaint Description</label>
-            <textarea id="description" rows="5" placeholder="Describe the issue..." required></textarea>
+            <a href="complaint.html">
+                <button>Register Complaint</button>
+            </a>
 
-            <label for="photo">Upload Photo</label>
-            <input type="file" id="photo" accept="image/*" required>
+            <a href="track.html">
+                <button>Track Complaint</button>
+            </a>
 
-            <button type="submit">Submit Complaint</button>
+            <a href="login.html">
+                <button>Admin Login</button>
+            </a>
 
+        </div>
 
-            <br><br>
-<a href="complaints.html">
-    <button type="button">View Complaints</button>
-</a>
+    </div>
 
-            <br><br>
-
-<a href="track.html">
-    <button type="button">Track Complaint</button>
-</a>
-
-<br><br>
-
-<a href="login.html">
-    <button type="button">Admin Dashboard</button>
-</a>
-
-<br><br>
+</section>
 
 <a href="complaints.html">
     <button type="button">View All Complaints</button>
