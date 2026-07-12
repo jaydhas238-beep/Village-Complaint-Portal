@@ -71,3 +71,65 @@ if (tableBody) {
     });
 
 }
+
+
+// ================= ADMIN DASHBOARD =================
+
+const adminContainer = document.getElementById("adminContainer");
+
+if (adminContainer) {
+
+    const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+    complaints.forEach((complaint, index) => {
+
+        const card = document.createElement("div");
+        card.className = "admin-card";
+
+        card.innerHTML = `
+            <h2>${complaint.id}</h2>
+
+            <p><strong>Name:</strong> ${complaint.name}</p>
+
+            <p><strong>Category:</strong> ${complaint.category}</p>
+
+            <p><strong>Description:</strong> ${complaint.description}</p>
+
+            <h4>Before Photo</h4>
+
+            <img src="${complaint.photo}" alt="Complaint Photo">
+
+            <br><br>
+
+            <label>Status</label>
+
+            <select id="status-${index}">
+                <option value="Pending" ${complaint.status=="Pending"?"selected":""}>Pending</option>
+                <option value="In Progress" ${complaint.status=="In Progress"?"selected":""}>In Progress</option>
+                <option value="Resolved" ${complaint.status=="Resolved"?"selected":""}>Resolved</option>
+            </select>
+
+            <br>
+
+            <label>Upload Completed Work Photo</label>
+
+            <input type="file" id="afterPhoto-${index}" accept="image/*">
+
+            <br>
+
+            <label>Remark</label>
+
+            <textarea id="remark-${index}" rows="3">${complaint.remark || ""}</textarea>
+
+            <br>
+
+            <button class="updateBtn" onclick="updateComplaint(${index})">
+                Update Complaint
+            </button>
+        `;
+
+        adminContainer.appendChild(card);
+
+    });
+
+}
