@@ -41,6 +41,24 @@
 
     </section>
 
+    <div class="search-bar">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔍 Search by Complaint ID, Name or Category..."
+        onkeyup="filterComplaints()"
+    >
+
+    <select id="statusFilter" onchange="filterComplaints()">
+        <option value="All">All Status</option>
+        <option value="Pending">Pending</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Resolved">Resolved</option>
+    </select>
+
+</div>
+
     <h2 class="section-title">All Complaints</h2>
 
     <section id="adminContainer"></section>
