@@ -207,11 +207,12 @@ td img{
 }
 
 .stat-card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    height:140px;
 }
 
 .stat-card h3{
@@ -244,10 +245,11 @@ td img{
 }
 
 .admin-card{
+    width:100%;
     background:#fff;
     border-radius:15px;
     padding:25px;
-    box-shadow:0 8px 25px rgba(0,0,0,.1);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
 .admin-card img{
