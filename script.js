@@ -175,3 +175,55 @@ function updateComplaint(index) {
     }
 
 }
+
+
+function trackComplaint(){
+
+    const id=document.getElementById("trackId").value.trim().toUpperCase();
+
+    const complaints=JSON.parse(localStorage.getItem("complaints")) || [];
+
+    const complaint=complaints.find(c=>c.id===id);
+
+    const result=document.getElementById("trackResult");
+
+    if(!complaint){
+
+        result.innerHTML="<h2>Complaint Not Found</h2>";
+
+        return;
+
+    }
+
+    result.innerHTML=`
+
+    <div class="result-card">
+
+        <h2>${complaint.id}</h2>
+
+        <p><strong>Name:</strong> ${complaint.name}</p>
+
+        <p><strong>Category:</strong> ${complaint.category}</p>
+
+        <p><strong>Status:</strong> ${complaint.status}</p>
+
+        <p><strong>Remark:</strong> ${complaint.remark || "No remarks yet."}</p>
+
+        <h3>Before Photo</h3>
+
+        <img src="${complaint.photo}">
+
+        ${
+            complaint.afterPhoto
+            ?
+            `<h3>After Completion Photo</h3>
+             <img src="${complaint.afterPhoto}">`
+            :
+            ""
+        }
+
+    </div>
+
+    `;
+
+}
