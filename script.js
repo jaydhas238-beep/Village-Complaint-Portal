@@ -44,3 +44,30 @@ if (form) {
 
     });
 }
+
+const tableBody = document.querySelector("#complaintsTable tbody");
+
+if (tableBody) {
+
+    const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+    complaints.forEach((complaint) => {
+
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+            <td>${complaint.id}</td>
+            <td>${complaint.name}</td>
+            <td>${complaint.category}</td>
+            <td>${complaint.description}</td>
+            <td>
+                <img src="${complaint.photo}" width="80">
+            </td>
+            <td>${complaint.status}</td>
+        `;
+
+        tableBody.appendChild(row);
+
+    });
+
+}
