@@ -1,1 +1,88 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Complaint</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Register Complaint</h1>
+    <p>Village Complaint Registration Portal</p>
+</header>
+
+<main>
+
+<div class="form-container">
+
+<form id="complaintForm">
+
+<label>Full Name</label>
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required
+>
+
+<label>Complaint Category</label>
+
+<select id="category" required>
+
+<option value="">Select Category</option>
+
+<option>Road Damage</option>
+
+<option>Water Supply</option>
+
+<option>Street Light</option>
+
+<option>Garbage</option>
+
+<option>Drainage</option>
+
+<option>Electricity</option>
+
+<option>Other</option>
+
+</select>
+
+<label>Description</label>
+
+<textarea
+id="description"
+rows="5"
+placeholder="Describe the problem..."
+required
+></textarea>
+
+<label>Complaint Photo</label>
+
+<input
+type="file"
+id="photo"
+accept="image/*"
+required
+>
+
+<button type="submit">
+Submit Complaint
+</button>
+
+</form>
+
+</div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
